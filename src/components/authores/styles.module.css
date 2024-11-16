@@ -1,0 +1,72 @@
+.container {
+    max-width: 1200px;
+    padding: 12px;
+    margin: 34px auto;
+}
+
+.titleHeader {
+    margin-bottom: 34px;
+    border-bottom: 1px solid var(--primary-red-medium-transparent);
+    padding: 0px 12px 12px 12px;
+}
+
+.titleHeader>h2 {
+    font-size: 36px;
+}
+
+.titleHeader>h2>span {
+    color: var(--primary-red-medium-transparent);
+}
+
+.listAuthor {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.cardContainer {
+    max-width: 275px;
+    margin-bottom: 12px;
+    height: 330px;
+    flex: 0 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background-color: var(--primary-red-semi-transparent);
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.image {
+    width: 100%;
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.image>img {
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.image>img:hover {
+    transform: scale(1.1);
+
+}
+
+.name {
+    font-size: 18px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    text-decoration: none;
+    margin-left: 8px;
+}
+
+@media only screen and (max-width: 768px) {
+    .listAuthor {
+        justify-content: center;
+    }
+}

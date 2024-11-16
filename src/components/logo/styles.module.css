@@ -1,0 +1,15 @@
+
+.containerLogo {
+    width: 200px;
+}
+
+.containerLogo > h1 {
+  color: var(--primary-red-strong);
+  font-size: 30px;
+  text-align: center;
+  font-style: oblique;
+}
+
+.containerLogo > h1 > span {
+    color: var(--neutral-white-transparent);
+}

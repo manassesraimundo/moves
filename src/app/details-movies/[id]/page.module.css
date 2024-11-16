@@ -1,0 +1,152 @@
+.containerHeader {
+    width: 100%;
+    padding: 0 12px;
+}
+
+.titleHeader {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 34px;
+    border-bottom: 1px solid var(--primary-red-semi-transparent);
+    padding: 0px 12px 12px 12px;
+}
+
+.titleHeader > h2 {
+    font-size: 36px;
+}
+
+.titleHeader > h2 > span {
+    color: var(--primary-red-semi-transparent);
+}
+
+.container {
+    margin: 34px auto;
+    max-width: 1000px;
+    padding: 0 12px;
+    display: flex;
+    gap: 34px;
+}
+
+.image {
+    position: relative;
+    width: 360px;
+    height: 480px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.image>img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.image:hover img {
+    transform: scale(1.1);
+    opacity: 0.5;
+}
+
+.containerInfo {
+    max-width: 500px;
+}
+
+.title {
+    margin: 34px 0;
+}
+
+.title>h2 {
+    font-size: 34px;
+    margin-bottom: 24px;
+}
+
+
+.title > h3 {
+    margin-bottom: 24px;
+    font-size: 18px;
+}
+
+.title> span {
+    color: var(--primary-red-bold);
+    font-size: 17px;
+    text-decoration: underline;
+
+}
+
+.description {
+    margin-bottom: 24px;
+}
+
+.description>p {
+    line-height: 26px;
+    text-align: justify;
+}
+
+.image::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.6));
+    z-index: 1;
+}
+
+.genero h5 {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.generoItem {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.generoItem>p {
+    background-color: var(--primary-red-semi-bold);
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 34px;
+    margin-top: 24px;
+}
+
+.info > div > p {
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.year {
+    font-weight: bold;
+}
+
+.link {
+    margin-top: 24px;
+}
+
+.link > a {
+    color: var(--neutral-white);
+    padding: 8px;
+    transition: 0.5s ease;
+}
+
+.link > a:hover {
+    text-decoration: none;
+}
+
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+}

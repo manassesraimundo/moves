@@ -1,0 +1,8 @@
+.containerCard {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 24px auto;
+    padding: 14px;
+    max-width: 1200px;
+}

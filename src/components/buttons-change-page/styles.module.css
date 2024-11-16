@@ -1,0 +1,13 @@
+.buttonsChangePage {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.buttonsChangePage > button {
+    padding: 12px;
+    background-color: var(--primary-red-bold);
+    color: var(--neutral-white);
+    transition: .5s ease;
+    cursor: pointer;
+}

@@ -1,0 +1,50 @@
+.containerHeader {
+    width: 100%;
+    padding: 0 12px;
+}
+
+.titleHeader {
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 34px;
+    border-bottom: 1px solid var(--primary-red-medium-transparent);
+    padding: 0px 12px 12px 12px;
+}
+
+.titleHeader > h2 {
+    font-size: 36px;
+}
+
+.title {
+    max-width: 1200px;
+    margin: 0 auto;
+    /* margin-bottom: 34px; */
+    padding: 0px 12px 12px 12px;
+}
+
+.title > h2 {
+    font-size: 26px;
+}
+
+.containeEp {
+    width: 100%;
+    padding: 0 12px;
+}
+
+.episodios {
+    background-color: var(--black-transparent);
+    border-radius: 8px;
+    max-width: 1200px;
+    height: 400px;
+    margin: 34px auto;
+    padding: 12px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+
+.episodios > p {
+    width: 100%;
+    border-bottom: 1px solid var(--primary-red-light);
+    padding: 12px;
+    font-size: 18px;
+}

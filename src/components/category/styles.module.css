@@ -1,0 +1,79 @@
+.category {
+    background-color: var(--primary-red-bold);
+    max-width: 1200px;
+    height: 80px;    
+    margin: 34px auto 0px auto;
+    padding: 1px 1px 0px 1px;
+}
+
+.category div {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 2px;
+}
+
+.category > div > button {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    color: var(--neutral-white);
+    background-color: var(--accent-red-medium);
+    font-size: 16px;
+    font-weight: bold;
+    transition: .5s;
+}
+
+.category > div > button:hover {
+    background-color: var(--neutral-warm-brown);
+}
+
+.title {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 14px;
+    margin-top: 34px;
+    border-bottom: 1px solid var(--primary-red);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title > h2 {
+    font-size: 34px;
+}
+
+.title > h2 > span {
+    color: var(--primary-red);
+}
+
+.containerCard {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin: 24px auto;
+    padding: 14px;
+    max-width: 1200px;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.buttons > button {
+    padding: 12px;
+    background-color: var(--primary-red-bold);
+    color: var(--neutral-white);
+    transition: .5s ease;
+    cursor: pointer;
+}
+
+.buttons > button:hover {
+    background-color: var(--accent-red-bold);
+}

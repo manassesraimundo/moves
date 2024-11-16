@@ -1,0 +1,40 @@
+.nav {
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+.listNav {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+}
+
+.listNav > li > a {
+    color: var(--neutral-white);
+    font-size: 16px;
+    text-decoration: none;
+    padding: 12px;
+    transition: .5s;
+    border-radius: 6px;
+
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.listNav > li > a:hover {
+    background-color: var(--primary-red);
+    text-decoration: underline;
+}
+
+.active {
+    background-color: var(--primary-red);
+}
+
+@media only screen and (max-width: 768px) {
+    .nav {
+        display: none;
+    }
+}
