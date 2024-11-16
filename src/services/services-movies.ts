@@ -4,7 +4,7 @@ import { api } from "./api";
 import { Authores } from "@/types/author";
 import { Movies } from "@/types/card";
 
-const key = process.env.API_KEY;
+const key = process.env.API_KEY as String;
 
 const getMovies = async () => {
     try {
