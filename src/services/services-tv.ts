@@ -142,23 +142,6 @@ const searchTv = async (query: string, page?: number) => {
     }
 }
 
-const getTvByPage = async (page: number, category: string) => {
-    try {
-        const response = await api.get(`/tv/${category}`, {
-            params: {
-                api_key: key,
-                language: 'pt-BR',
-                page
-            },
-        });
-
-        const resultTv: Tv[] = response.data.results;
-        return resultTv;
-    } catch (error) {
-        console.log('Erro ao buscar filmes:', error);
-    }
-}
-
 const getCastTv = async (id: number) => {
     try {
         const response = await api.get(`/tv/${id}/credits`, {
@@ -184,6 +167,5 @@ export {
     getTvTopRated,
     getTvOnTheAir,
     searchTv,
-    getTvByPage,
     getCastTv
 }

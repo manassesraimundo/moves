@@ -108,22 +108,6 @@ const searchMovies = async (query: string, page?: number) => {
     }
 }
 
-const getMoviesByPage = async (page: number, category: string) => {
-    try {
-        const response = await api.get(`/movie/${category}`, {
-            params: {
-                api_key: key,    
-                language: 'pt-BR',
-                page
-            },
-        });
-        const resultMovies: Movies[] = response.data.results
-        return resultMovies;
-    } catch (error) {
-        console.log('Erro ao buscar filmes:', error);
-    }
-}
-
 const getCastMovie = async (id: number) => {
     try {
         const response = await api.get(`/movie/${id}/credits`, {
@@ -146,6 +130,5 @@ export {
     getMoviesUpcoming,
     getMovieDetails,
     searchMovies,
-    getMoviesByPage,
     getCastMovie,
 }
