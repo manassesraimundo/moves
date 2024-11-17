@@ -155,7 +155,7 @@ const Category = ({ popular, topRated, upcoming }: CategoryProps) => {
                 isActive.popular && (
                     <div style={{ padding: '12px' }}>
                         <div className={styles.title}>
-                            <h2><span>{pathname === '/movies' ? 'Filmes' : 'Séries'}</span> Populares</h2>
+                            <h3><span>{pathname === '/movies' ? 'Filmes' : 'Séries'}</span> Populares</h3>
 
                             <PaginationButtons
                                 currentPage={pagination.popular}
@@ -175,7 +175,7 @@ const Category = ({ popular, topRated, upcoming }: CategoryProps) => {
                 isActive.topRated && (
                     <div style={{ padding: '12px' }}>
                         <div className={styles.title}>
-                            <h2><span>{pathname === '/movies' ? 'Filmes' : 'Séries'}</span> Mas Votados</h2>
+                            <h3><span>{pathname === '/movies' ? 'Filmes' : 'Séries'}</span> Mas Votados</h3>
 
                             <PaginationButtons
                                 currentPage={pagination.topRated}
@@ -195,7 +195,7 @@ const Category = ({ popular, topRated, upcoming }: CategoryProps) => {
                 isActive.estreia && (
                     <div style={{ padding: '12px' }}>
                         <div className={styles.title}>
-                            <h2><span>{pathname === '/movies' ? 'Filmes' : 'Séries'}</span> {pathname === '/movies' ? 'para o Laçamento' : 'em Exibição'}</h2>
+                            <h3><span>{pathname === '/movies' ? 'Filmes' : 'Séries'}</span> {pathname === '/movies' ? 'para o Laçamento' : 'em Exibição'}</h3>
 
                             <PaginationButtons
                                 currentPage={pagination.estreia}
