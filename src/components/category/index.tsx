@@ -101,7 +101,7 @@ const Category = ({ popular, topRated, upcoming }: CategoryProps) => {
     };
 
     const handlePageChange = (page: number, category: string) => {
-        if (page === 0) return;
+        if (page < 1) return;
 
         switch (category) {
             case 'popular':
