@@ -1,6 +1,6 @@
 'use client';
 
-import React, { KeyboardEvent } from 'react';
+import React, { FormEvent, KeyboardEvent } from 'react';
 import styles from "./sytles.module.css";
 
 import { usePathname } from 'next/navigation';
@@ -61,7 +61,9 @@ const Input = ({ value, onEnter, onChange, hideResult }: InputProps) => {
         }
     }
 
-    const Submit = () => {
+    const Submit = (evt: FormEvent) => {
+        evt.preventDefault();
+        
         if (value != "" && onEnter) {
             onEnter();
         }
