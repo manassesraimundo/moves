@@ -61,9 +61,15 @@ const Input = ({ value, onEnter, onChange, hideResult }: InputProps) => {
         }
     }
 
+    const Submit = () => {
+        if (value != "" && onEnter) {
+            onEnter();
+        }
+    }
+
     return (
         <div className={styles.container}>
-            <form className={`${styles.divInput} ${value !== '' && styles.borderColor}`}>
+            <form onSubmit={Submit} className={`${styles.divInput} ${value !== '' && styles.borderColor}`}>
                 <input
                     type="text"
                     placeholder='Busque aqui pro filme ou série'
