@@ -76,7 +76,7 @@ h1 {
 /* Estilização para telas maiores que 768px */
 @media (min-width: 768px) {
   h1 {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
   h2 {
     font-size: 1.76rem;
