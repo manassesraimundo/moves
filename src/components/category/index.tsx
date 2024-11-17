@@ -24,9 +24,9 @@ const Category = ({ popular, topRated, upcoming }: CategoryProps) => {
         estreia: false
     });
     const [pagination, setPagenation] = React.useState({
-        popular: 1,
-        topRated: 1,
-        estreia: 1
+        popular: 0,
+        topRated: 0,
+        estreia: 0
     });
     const [topRatedList, setTopRatedList] = React.useState(topRated);
     const [upcomingList, setUpcomingList] = React.useState(upcoming);
