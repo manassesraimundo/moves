@@ -28,6 +28,7 @@ const Category = ({ popular, topRated, upcoming }: CategoryProps) => {
         topRated: 1,
         estreia: 1
     });
+    const [category, setChangeCategory] = React.useState('')
     const [topRatedList, setTopRatedList] = React.useState(topRated);
     const [upcomingList, setUpcomingList] = React.useState(upcoming);
     const [popularList, setPopularList] = React.useState(popular);
@@ -54,6 +55,38 @@ const Category = ({ popular, topRated, upcoming }: CategoryProps) => {
                     topRated: false,
                     estreia: true
                 });
+                break;
+        }
+    }
+
+    const handlePageChange = (page: number, category: string) => {
+        if (page < 1) return;
+
+        switch (category) {
+            case 'popular':
+                setPagenation({
+                    popular: page,
+                    topRated: pagination.topRated,
+                    estreia: pagination.estreia
+                });
+                setChangeCategory(category);
+                break;
+            case 'top_rated':
+                setPagenation({
+                    popular: pagination.popular,
+                    topRated: page,
+                    estreia: pagination.estreia
+                });
+                setChangeCategory(category);
+                break;
+            case 'upcoming':
+            case 'on_the_air':
+                setPagenation({
+                    popular: pagination.popular,
+                    topRated: pagination.topRated,
+                    estreia: page
+                });
+                setChangeCategory(category);
                 break;
         }
     }
@@ -100,37 +133,9 @@ const Category = ({ popular, topRated, upcoming }: CategoryProps) => {
         setIsLoading(false);
     };
 
-    const handlePageChange = (page: number, category: string) => {
-        if (page < 1) return;
-
-        switch (category) {
-            case 'popular':
-                setPagenation({
-                    popular: page,
-                    topRated: pagination.topRated,
-                    estreia: pagination.estreia
-                });
-                PageChange(category);
-                break;
-            case 'top_rated':
-                setPagenation({
-                    popular: pagination.popular,
-                    topRated: page,
-                    estreia: pagination.estreia
-                });
-                PageChange(category);
-                break;
-            case 'upcoming':
-            case 'on_the_air':
-                setPagenation({
-                    popular: pagination.popular,
-                    topRated: pagination.topRated,
-                    estreia: page
-                });
-                PageChange(category);
-                break;
-        }
-    }
+    React.useEffect(() => {
+        PageChange(category);    
+    }, [category, pagination]);
 
     return (
         <>
