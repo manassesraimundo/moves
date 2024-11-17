@@ -63,7 +63,7 @@ const Input = ({ value, onEnter, onChange, hideResult }: InputProps) => {
 
     return (
         <div className={styles.container}>
-            <div className={`${styles.divInput} ${value !== '' && styles.borderColor}`}>
+            <form className={`${styles.divInput} ${value !== '' && styles.borderColor}`}>
                 <input
                     type="text"
                     placeholder='Busque aqui pro filme ou série'
@@ -79,7 +79,7 @@ const Input = ({ value, onEnter, onChange, hideResult }: InputProps) => {
                         <CiSearch color='#eee' size={28} />
                     )
                 }
-            </div>
+            </form>
 
             {
                 (pathname !== '/search') && (resultMovie.length > 0 || resultTv.length > 0) && (!hideResult) && (

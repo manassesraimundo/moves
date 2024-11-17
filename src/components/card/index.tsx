@@ -5,11 +5,10 @@ import Link from 'next/link';
 
 import SkeletonCard from '../skeleton/skeleton-card';
 
-import { FaStar } from 'react-icons/fa';
-
 import { CardProps } from '@/types/props';
 
 import { BASE_URL_IMAGE } from '@/services/api';
+import Star from '../star';
 
 const Card = ({
     id,
@@ -35,16 +34,19 @@ const Card = ({
             <div className={styles.detalhe}>
                 <div className={styles.title}>
                     <h4>{title ? title : name}</h4>
+
+                    <div className={styles.votos}>
+                    {
+                        vote_average && (
+                            <Star star_number={vote_average}/>
+                        )
+                    }
+                    </div>
                 </div>
 
                 <div className={`${overview && styles.description}`}>
                     <p>{overview}</p>
                 </div>
-            </div>
-
-            <div className={styles.votos}>
-                <FaStar size={18} color="#ffd700" />
-                <p>{vote_average?.toFixed(1)}</p>
             </div>
 
             <div className={styles.buttonDetalhes}>
