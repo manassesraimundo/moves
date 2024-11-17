@@ -60,6 +60,7 @@ const Category = ({ popular, topRated, upcoming }: CategoryProps) => {
 
     const PageChange = async (newPage: number, category: string) => {
         setIsLoading(true);
+        alert("Pagina: " + newPage)
 
         if (pathname === '/movies') {
             if (category === 'popular') {
