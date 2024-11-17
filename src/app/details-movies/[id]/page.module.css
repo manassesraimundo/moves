@@ -11,10 +11,6 @@
     padding: 0px 12px 12px 12px;
 }
 
-.titleHeader > h2 {
-    font-size: 36px;
-}
-
 .titleHeader > h2 > span {
     color: var(--primary-red-semi-transparent);
 }

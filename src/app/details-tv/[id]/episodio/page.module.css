@@ -11,19 +11,10 @@
     padding: 0px 12px 12px 12px;
 }
 
-.titleHeader > h2 {
-    font-size: 36px;
-}
-
 .title {
     max-width: 1200px;
     margin: 0 auto;
-    /* margin-bottom: 34px; */
     padding: 0px 12px 12px 12px;
-}
-
-.title > h2 {
-    font-size: 26px;
 }
 
 .containeEp {

@@ -48,7 +48,7 @@ export default function EpisodioPage() {
 
             <div className={styles.containerHeader}>
                 <div className={styles.title}>
-                    <h2>Episódios da temporada - {seasonNumber}</h2>
+                    <h3>Episódios da temporada - {seasonNumber}</h3>
                 </div>
             </div>
 
