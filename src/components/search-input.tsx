@@ -20,6 +20,7 @@ const SearchInput = ({ defaultValue, hideOnSearch }: SeachInputProps) => {
         if (!seachInput) return null;
 
         router.push('/search?q=' + encodeURIComponent(seachInput));
+        router.refresh();
     }
 
     return (
