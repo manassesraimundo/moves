@@ -19,6 +19,7 @@ const Authore = ({ authores }: AuthoreProps) => {
                 {
                     authores.map(authore => (
                         <AuthorCard
+                            key={authore.profile_path}
                             name={authore.name}
                             profile_path={authore.profile_path}
                             character={authore.character}

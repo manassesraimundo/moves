@@ -19,8 +19,12 @@ const TemporadaCard = ({ name, image, episosio, season_number }: TemporadaCardPr
   const router = useRouter();
   const { id } = useParams();
 
+  const navigate = () => {
+    router.push(`/details-tv/${id}/episodio?seasonNumber=${season_number}`)
+  }
+
   return (
-    <div className={styles.cardTemporada} onClick={() => router.push(`/details-tv/${id}/episodio?seasonNumber=${season_number}`)}>
+    <div className={styles.cardTemporada} onClick={navigate}>
       <div className={styles.tempo}>
         <h2>{name}</h2>
         <p>Ep-{episosio}</p>

@@ -23,9 +23,9 @@ export default function EpisodioPage() {
     const [banner, setBanner] = React.useState('');
 
     const getDetails = async () => {
-        const episo = await getSeasonEpisodes(id as string, seasonNumber as string);
-        const data = await getTvDetails(id as string);
-        const img = await getSeasonBanner(id as string, seasonNumber as string) as string;
+        const episo = await getSeasonEpisodes(Number(id), seasonNumber as string);
+        const data = await getTvDetails(Number(id));
+        const img = await getSeasonBanner(Number(id), seasonNumber as string) as string;
 
         setEpisodios(episo!);
         setDataSerie(data!);

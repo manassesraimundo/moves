@@ -35,8 +35,8 @@ const Input = ({ value, onEnter, onChange, hideResult }: InputProps) => {
     React.useEffect(() => {
         const results = async () => {
             if (value) {
-                const dataMovies = await searchMovies(value ?? '')
-                const dataTv = await searchTv(value ?? '')
+                const dataMovies = await searchMovies(value ? value : '')
+                const dataTv = await searchTv(value ? value : '')
                 
                 if (dataMovies)
                     setResultMovie(dataMovies.splice(0, 5));

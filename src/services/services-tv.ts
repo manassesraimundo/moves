@@ -12,7 +12,7 @@ const getTv = async () => {
         const responseTv = await api.get('/discover/tv', {
             params: {
                 api_key: key,
-                language: 'pt-br',
+                language: 'pt-BR',
                 page: 1
             }
         });
@@ -24,42 +24,42 @@ const getTv = async () => {
     }
 }
 
-const getTvDetails = async (id: string) => {
+const getTvDetails = async (id: number) => {
     try {
         const response = await api.get(`/tv/${id}`, {
             params: {
                 api_key: key,
-                language: 'pt-br',
+                language: 'pt-BR',
             },
         });
         const result: Tv = response.data;
         return result;
     } catch (error) {
-        console.error('Erro ao buscar os detalhes do filme:', error);
+        console.log('Erro ao buscar os detalhes do filme:', error);
     }
 };
 
-const getSeasonEpisodes = async (tvId: string, seasonNumber: string) => {
+const getSeasonEpisodes = async (tvId: number, seasonNumber: string) => {
     try {
         const response = await api.get(`/tv/${tvId}/season/${seasonNumber}`, {
             params: {
                 api_key: key,
-                language: 'pt-br',
+                language: 'pt-BR',
             },
         });
         const result: Episods[] = response.data.episodes;
         return result;
     } catch (error) {
-        console.error('Erro ao buscar os episódios da temporada:', error);
+        console.log('Erro ao buscar os episódios da temporada:', error);
     }
 };
 
-const getSeasonBanner = async (tvId: string, seasonNumber: string) => {
+const getSeasonBanner = async (tvId: number, seasonNumber: string) => {
     try {
         const response = await api.get(`/tv/${tvId}/season/${seasonNumber}`, {
             params: {
                 api_key: key,
-                language: 'pt-br',
+                language: 'pt-BR',
             },
         });
 
@@ -68,17 +68,17 @@ const getSeasonBanner = async (tvId: string, seasonNumber: string) => {
 
         return posterUrl;
     } catch (error) {
-        console.error('Erro ao buscar os detalhes da temporada:', error);
+        console.log('Erro ao buscar os detalhes da temporada:', error);
     }
 };
 
-const getTvPopular = async () => {
+const getTvPopular = async (page?: number) => {
     try {
         const response = await api.get('/tv/popular', {
             params: {
                 api_key: key,
-                language: 'pt-br',
-                page: 1
+                language: 'pt-BR',
+                page: page ?? 1
             }
         });
 
@@ -89,13 +89,13 @@ const getTvPopular = async () => {
     }
 }
 
-const getTvTopRated = async () => {
+const getTvTopRated = async (page?: number) => {
     try {
         const response = await api.get('/tv/top_rated', {
             params: {
                 api_key: key,
-                language: 'pt-br',
-                page: 1
+                language: 'pt-BR',
+                page: page ?? 1
             }
         });
 
@@ -106,13 +106,13 @@ const getTvTopRated = async () => {
     }
 }
 
-const getTvOnTheAir = async () => {
+const getTvOnTheAir = async (page?: number) => {
     try {
         const response = await api.get('/tv/on_the_air', {
             params: {
                 api_key: key,
-                language: 'pt-br',
-                page: 1
+                language: 'pt-BR',
+                page: page ?? 1
             }
         });
 
@@ -128,17 +128,17 @@ const searchTv = async (query: string, page?: number) => {
     try {
         const response = await api.get('/search/tv', {
             params: {
-                api_key: key,    
-                query: query,        
+                api_key: key,
+                query: query,
                 language: 'pt-BR',
-                page: page ?? 1
+                page: page ? page : 1
             },
         });
 
         const resultTv: Tv[] = response.data.results;
         return resultTv;
     } catch (error) {
-        console.error('Erro ao buscar filmes:', error);
+        console.log('Erro ao buscar filmes:', error);
     }
 }
 
@@ -146,7 +146,7 @@ const getTvByPage = async (page: number, category: string) => {
     try {
         const response = await api.get(`/tv/${category}`, {
             params: {
-                api_key: key,    
+                api_key: key,
                 language: 'pt-BR',
                 page
             },
@@ -155,11 +155,11 @@ const getTvByPage = async (page: number, category: string) => {
         const resultTv: Tv[] = response.data.results;
         return resultTv;
     } catch (error) {
-        console.error('Erro ao buscar filmes:', error);
+        console.log('Erro ao buscar filmes:', error);
     }
 }
 
-const getCastTv = async (id: string) => {
+const getCastTv = async (id: number) => {
     try {
         const response = await api.get(`/tv/${id}/credits`, {
             params: {
@@ -171,7 +171,7 @@ const getCastTv = async (id: string) => {
         const result: Authores[] = response.data.cast;
         return result;
     } catch (error) {
-        console.error('Erro ao buscar os detalhes do Tv:', error);
+        console.log('Erro ao buscar os detalhes do Tv:', error);
     }
 };
 

@@ -42,9 +42,9 @@ export default async function MoviePage() {
         </div>
 
         <Category
-          popular={popular!}
-          topRated={topRated!}
-          upcoming={upcoming!}
+          popular={popular ? popular : []}
+          topRated={topRated ? topRated : []}
+          upcoming={upcoming ? upcoming : []}
         />
       </div>
 

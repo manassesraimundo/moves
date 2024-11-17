@@ -10,13 +10,13 @@ import CardList from '../card-list';
 
 import { CategoryProps } from '@/types/props';
 
-import { getMoviesByPage } from '@/services/services-movies';
-import { getTvByPage } from '@/services/services-tv';
+import { getMoviesPopular, getMoviesTopRated, getMoviesUpcoming } from '@/services/services-movies';
+import { getTvOnTheAir, getTvPopular, getTvTopRated } from '@/services/services-tv';
 
 const Category = ({ popular, topRated, upcoming }: CategoryProps) => {
 
     const pathname = usePathname();
-    
+
     const [isLoading, setIsLoading] = React.useState(false);
     const [isActive, setIsActive] = React.useState({
         popular: true,
@@ -62,25 +62,39 @@ const Category = ({ popular, topRated, upcoming }: CategoryProps) => {
         setIsLoading(true);
 
         if (pathname === '/movies') {
-            const result = await getMoviesByPage(newPage, category);
-
-            if (category === 'popular')
-                setPopularList(result!);
-            else if (category === 'top_rated')
-                setTopRatedList(result!);
-            else if (category === 'upcoming')
-                setUpcomingList(result!);
+            if (category === 'popular') {
+                const popular = await getMoviesPopular(newPage);
+                if (popular)
+                    setPopularList(popular);
+            }
+            else if (category === 'top_rated') {
+                const topRated = await getMoviesTopRated(newPage);
+                if (topRated)
+                    setTopRatedList(topRated);
+            }
+            else if (category === 'upcoming') {
+                const upcoming = await getMoviesUpcoming(newPage);
+                if (upcoming)
+                    setUpcomingList(upcoming);
+            }
         }
 
         if (pathname === '/tv') {
-            const resultTv = await getTvByPage(newPage, category)
-
-            if (category === 'popular')
-                setPopularList(resultTv!);
-            else if (category === 'top_rated')
-                setTopRatedList(resultTv!);
-            else if (category === 'on_the_air')
-                setUpcomingList(resultTv!);
+            if (category === 'popular') {
+                const popular = await getTvPopular(newPage);
+                if (popular)
+                    setPopularList(popular);
+            }
+            else if (category === 'top_rated') {
+                const topRated = await getTvTopRated(newPage);
+                if (topRated)
+                    setTopRatedList(topRated);
+            }
+            else if (category === 'on_the_air') {
+                const upcoming = await getTvOnTheAir(newPage);
+                if (upcoming)
+                    setUpcomingList(upcoming);
+            }
         }
 
         setIsLoading(false);
@@ -149,7 +163,7 @@ const Category = ({ popular, topRated, upcoming }: CategoryProps) => {
                                 handlePageChange={handlePageChange}
                             />
                         </div>
-                        <CardList 
+                        <CardList
                             list={popularList}
                             isLoadin={isLoading}
                         />
@@ -169,7 +183,7 @@ const Category = ({ popular, topRated, upcoming }: CategoryProps) => {
                                 handlePageChange={handlePageChange}
                             />
                         </div>
-                        <CardList 
+                        <CardList
                             list={topRatedList}
                             isLoadin={isLoading}
                         />
@@ -189,7 +203,7 @@ const Category = ({ popular, topRated, upcoming }: CategoryProps) => {
                                 handlePageChange={handlePageChange}
                             />
                         </div>
-                        <CardList 
+                        <CardList
                             list={upcomingList}
                             isLoadin={isLoading}
                         />

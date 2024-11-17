@@ -15,9 +15,9 @@ import CardList from "@/components/card-list";
 export default async function Home() {
 
   const movies = await getMovies();
-  const tv = await getTv(); 
-  
-  function banner () {
+  const tv = await getTv();
+
+  function banner() {
     for (let i = 0; i <= movies?.length!; i++)
       if (movies && movies[i].backdrop_path) return movies[i].backdrop_path;
   }
@@ -39,17 +39,17 @@ export default async function Home() {
 
         <div className={styles.title2}>
           <h2>Filmes</h2>
-          <Link href={'/movies'}><FaPlus color="rgba(255, 0, 0, 0.4)" size={24}/> <span>Ver Mas</span></Link>
+          <Link href={'/movies'}><FaPlus color="rgba(255, 0, 0, 0.4)" size={24} /> <span>Ver Mas</span></Link>
         </div>
 
-        <CardList list={movies!} />
+        <CardList list={movies ? movies : []} />
 
         <div className={styles.title2}>
           <h2>Séries</h2>
-          <Link href={'/tv'}><FaPlus color="rgba(255, 0, 0, 0.4)" size={24}/> <span>Ver Mas</span></Link>
+          <Link href={'/tv'}><FaPlus color="rgba(255, 0, 0, 0.4)" size={24} /> <span>Ver Mas</span></Link>
         </div>
 
-        <CardList list={tv!} />
+        <CardList list={tv ? tv : []} />
       </div>
 
       <Footer backgroundImage={bannerimage} />

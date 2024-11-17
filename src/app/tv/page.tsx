@@ -20,7 +20,7 @@ export default async function TevPage() {
   const topRated = await getTvTopRated();
   const upcoming = await getTvOnTheAir();
 
-  function banner () {
+  function banner() {
     for (let i = 0; i <= popular?.length!; i++)
       if (popular && popular[i].backdrop_path) return popular[i].backdrop_path as string;
   }
@@ -42,9 +42,9 @@ export default async function TevPage() {
         </div>
 
         <Category
-          popular={popular!}
-          topRated={topRated!}
-          upcoming={upcoming!}
+          popular={popular ? popular : []}
+          topRated={topRated ? topRated : []}
+          upcoming={upcoming ? upcoming : []}
         />
       </div>
 

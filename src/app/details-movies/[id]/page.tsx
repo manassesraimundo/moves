@@ -29,11 +29,15 @@ export default function DetalisMoviesPage() {
         try {
             setIsloading(true);
 
-            const resultMovie = await getMovieDetails(String(id));
-            const authores = await getCastMovie(String(id));
+            const resultMovie = await getMovieDetails(Number(id));
+            const authores = await getCastMovie(Number(id));
 
-            setMovie(resultMovie!);
-            setAuthores(authores!);
+            if (resultMovie)
+                setMovie(resultMovie);
+
+            if (authores)
+                setAuthores(authores);
+
         } catch (error) {
             console.error(error)
         } finally {

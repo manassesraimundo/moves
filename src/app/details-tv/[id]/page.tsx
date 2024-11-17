@@ -29,13 +29,14 @@ export default function DetalisMoviesPage() {
         try {
             setIsloading(true);
 
-            const resultTv = await getTvDetails(String(id));
-            const authores = await getCastTv(String(id));
+            const resultTv = await getTvDetails(Number(id));
+            const authores = await getCastTv(Number(id));
 
             if (resultTv)
                 setTv(resultTv);
             if (authores)
                 setAuthores(authores);
+
         } catch (error) {
             console.error(error);
         } finally {

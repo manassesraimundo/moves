@@ -11,7 +11,7 @@ const getMovies = async () => {
         const responseMovies = await api.get('/discover/movie', {
             params: {
                 api_key: key,
-                language: 'pt-br',
+                language: 'pt-BR',
                 page: 1
             }
         });
@@ -23,13 +23,13 @@ const getMovies = async () => {
     }
 }
 
-const getMoviesPopular = async () => {
+const getMoviesPopular = async (page?: number) => {
     try {
         const responseMovies = await api.get('/movie/popular', {
             params: {
                 api_key: key,
-                language: 'pt-br',
-                page: 1
+                language: 'pt-BR',
+                page: page ?? 1
             }
         });
 
@@ -40,13 +40,13 @@ const getMoviesPopular = async () => {
     }
 }
 
-const getMoviesTopRated = async () => {
+const getMoviesTopRated = async (page?: number) => {
     try {
         const responseMovies = await api.get('/movie/top_rated', {
             params: {
                 api_key: key,
-                language: 'pt-br',
-                page: 1
+                language: 'pt-BR',
+                page: page ?? 1
             }
         });
 
@@ -57,13 +57,13 @@ const getMoviesTopRated = async () => {
     }
 }
 
-const getMoviesUpcoming = async () => {
+const getMoviesUpcoming = async (page?: number) => {
     try {
         const responseMovies = await api.get('/movie/upcoming', {
             params: {
                 api_key: key,
-                language: 'pt-br',
-                page: 1
+                language: 'pt-BR',
+                page: page ?? 1
             }
         });
 
@@ -74,7 +74,7 @@ const getMoviesUpcoming = async () => {
     }
 }
 
-const getMovieDetails = async (id: string) => {
+const getMovieDetails = async (id: number) => {
     try {
         const response = await api.get(`/movie/${id}`, {
             params: {
@@ -85,7 +85,7 @@ const getMovieDetails = async (id: string) => {
         const result: Movies = response.data;
         return result;
     } catch (error) {
-        console.error('Erro ao buscar os detalhes do filme:', error);
+        console.log('Erro ao buscar os detalhes do filme:', error);
     }
 };
 
@@ -97,14 +97,14 @@ const searchMovies = async (query: string, page?: number) => {
                 api_key: key,    
                 query: query,    
                 language: 'pt-BR',
-                page: page ?? 1
+                page: page ? page : 1
             },
         });
 
         const resultMovies: Movies[] = response.data.results
         return resultMovies
     } catch (error) {
-        console.error('Erro ao buscar filmes:', error);
+        console.log('Erro ao buscar filmes:', error);
     }
 }
 
@@ -120,11 +120,11 @@ const getMoviesByPage = async (page: number, category: string) => {
         const resultMovies: Movies[] = response.data.results
         return resultMovies;
     } catch (error) {
-        console.error('Erro ao buscar filmes:', error);
+        console.log('Erro ao buscar filmes:', error);
     }
 }
 
-const getCastMovie = async (id: string) => {
+const getCastMovie = async (id: number) => {
     try {
         const response = await api.get(`/movie/${id}/credits`, {
             params: {
@@ -135,7 +135,7 @@ const getCastMovie = async (id: string) => {
         const result: Authores[] = response.data.cast;
         return result;
     } catch (error) {
-        console.error('Erro ao buscar os detalhes do filme:', error);
+        console.log('Erro ao buscar os detalhes do filme:', error);
     }
 };
 

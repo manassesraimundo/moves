@@ -51,6 +51,7 @@ const Temporada = ({ seasons, number_of_seasons, authores }: TemporadaProps) => 
                             {
                                 seasons && seasons.map(tempo => (
                                     <TemporadaCard
+                                        key={tempo.season_number}
                                         name={tempo.name}
                                         image={tempo.poster_path}
                                         episosio={tempo.episode_count}
