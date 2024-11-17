@@ -44,7 +44,7 @@ const Temporada = ({ seasons, number_of_seasons, authores }: TemporadaProps) => 
                 temporada && (
                     <>
                         <div className={styles.title}>
-                            <h2>Temporadas - {number_of_seasons}</h2>
+                            <h3>Temporadas - {number_of_seasons}</h3>
                         </div>
 
                         <div className={styles.list}>

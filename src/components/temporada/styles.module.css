@@ -32,10 +32,6 @@
     padding: 0px 12px 12px 12px;
 }
 
-.title>h2 {
-    font-size: 36px;
-}
-
 .title>h2>span {
     color: var(--primary-red-bold);
 }
