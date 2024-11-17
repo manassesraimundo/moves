@@ -43,7 +43,7 @@
     justify-content: space-between;
 }
 
-.title > h2 > span {
+.title > h3 > span {
     color: var(--primary-red);
 }
 

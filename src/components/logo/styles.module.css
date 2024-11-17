@@ -2,7 +2,7 @@
   width: 120px;
 }
 
-.containerLogo > a {
+.containerLogo>a {
   text-decoration: none;
 }
 
@@ -12,6 +12,6 @@
   font-style: oblique;
 }
 
-.containerLogo>h1>span {
+.containerLogo>a>h1>span {
   color: var(--neutral-white-transparent);
 }
