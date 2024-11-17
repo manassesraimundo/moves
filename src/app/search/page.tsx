@@ -133,7 +133,7 @@ export default function SearchPage() {
                 </div>
 
                 <ButtonsChangePage
-                  page={pageMovie}
+                  page={pageTv}
                   handlePageChange={handlePageChange}
                 />
               </div>
