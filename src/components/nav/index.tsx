@@ -24,7 +24,7 @@ const NavBar = () => {
         <li>
           <Link href={'/'}
             style={{ backgroundColor: `${pathname === '/' ? 'red' : ''}` }}
-          ><MdHome color='#fff' size={24} /> <span>Home</span></Link>
+          ><MdHome color='#fff' size={24} /> <span>Início</span></Link>
         </li>
         <li>
           <Link href={'/movies'}
