@@ -78,7 +78,7 @@ const getTvPopular = async (page?: number) => {
             params: {
                 api_key: key,
                 language: 'pt-BR',
-                page: page ?? 1
+                page: page ? page : 1
             }
         });
 
@@ -95,7 +95,7 @@ const getTvTopRated = async (page?: number) => {
             params: {
                 api_key: key,
                 language: 'pt-BR',
-                page: page ?? 1
+                page: page ? page : 1
             }
         });
 
@@ -112,7 +112,7 @@ const getTvOnTheAir = async (page?: number) => {
             params: {
                 api_key: key,
                 language: 'pt-BR',
-                page: page ?? 1
+                page: page ? page : 1
             }
         });
 

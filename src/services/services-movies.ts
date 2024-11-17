@@ -29,7 +29,7 @@ const getMoviesPopular = async (page?: number) => {
             params: {
                 api_key: key,
                 language: 'pt-BR',
-                page: page ?? 1
+                page: page ? page : 1
             }
         });
 
@@ -46,7 +46,7 @@ const getMoviesTopRated = async (page?: number) => {
             params: {
                 api_key: key,
                 language: 'pt-BR',
-                page: page ?? 1
+                page: page ? page : 1
             }
         });
 
@@ -63,7 +63,7 @@ const getMoviesUpcoming = async (page?: number) => {
             params: {
                 api_key: key,
                 language: 'pt-BR',
-                page: page ?? 1
+                page: page ? page : 1
             }
         });
 
