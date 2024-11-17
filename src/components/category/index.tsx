@@ -24,9 +24,9 @@ const Category = ({ popular, topRated, upcoming }: CategoryProps) => {
         estreia: false
     });
     const [pagination, setPagenation] = React.useState({
-        popular: 0,
-        topRated: 0,
-        estreia: 0
+        popular: 1,
+        topRated: 1,
+        estreia: 1
     });
     const [topRatedList, setTopRatedList] = React.useState(topRated);
     const [upcomingList, setUpcomingList] = React.useState(upcoming);
@@ -58,23 +58,22 @@ const Category = ({ popular, topRated, upcoming }: CategoryProps) => {
         }
     }
 
-    const PageChange = async (newPage: number, category: string) => {
+    const PageChange = async (category: string) => {
         setIsLoading(true);
-        alert("Pagina: " + newPage)
 
         if (pathname === '/movies') {
             if (category === 'popular') {
-                const popular = await getMoviesPopular(newPage);
+                const popular = await getMoviesPopular(pagination.popular);
                 if (popular)
                     setPopularList(popular);
             }
             else if (category === 'top_rated') {
-                const topRated = await getMoviesTopRated(newPage);
+                const topRated = await getMoviesTopRated(pagination.topRated);
                 if (topRated)
                     setTopRatedList(topRated);
             }
             else if (category === 'upcoming') {
-                const upcoming = await getMoviesUpcoming(newPage);
+                const upcoming = await getMoviesUpcoming(pagination.estreia);
                 if (upcoming)
                     setUpcomingList(upcoming);
             }
@@ -82,17 +81,17 @@ const Category = ({ popular, topRated, upcoming }: CategoryProps) => {
 
         if (pathname === '/tv') {
             if (category === 'popular') {
-                const popular = await getTvPopular(newPage);
+                const popular = await getTvPopular(pagination.popular);
                 if (popular)
                     setPopularList(popular);
             }
             else if (category === 'top_rated') {
-                const topRated = await getTvTopRated(newPage);
+                const topRated = await getTvTopRated(pagination.topRated);
                 if (topRated)
                     setTopRatedList(topRated);
             }
             else if (category === 'on_the_air') {
-                const upcoming = await getTvOnTheAir(newPage);
+                const upcoming = await getTvOnTheAir(pagination.estreia);
                 if (upcoming)
                     setUpcomingList(upcoming);
             }
@@ -111,7 +110,7 @@ const Category = ({ popular, topRated, upcoming }: CategoryProps) => {
                     topRated: pagination.topRated,
                     estreia: pagination.estreia
                 });
-                PageChange(pagination.popular, category);
+                PageChange(category);
                 break;
             case 'top_rated':
                 setPagenation({
@@ -119,7 +118,7 @@ const Category = ({ popular, topRated, upcoming }: CategoryProps) => {
                     topRated: page,
                     estreia: pagination.estreia
                 });
-                PageChange(pagination.topRated, category);
+                PageChange(category);
                 break;
             case 'upcoming':
             case 'on_the_air':
@@ -128,7 +127,7 @@ const Category = ({ popular, topRated, upcoming }: CategoryProps) => {
                     topRated: pagination.topRated,
                     estreia: page
                 });
-                PageChange(pagination.estreia, category);
+                PageChange(category);
                 break;
         }
     }
