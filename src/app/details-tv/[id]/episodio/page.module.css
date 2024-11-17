@@ -17,6 +17,10 @@
     padding: 0px 12px 12px 12px;
 }
 
+.title > h3 {
+    font-size: 18px;
+}
+
 .containeEp {
     width: 100%;
     padding: 0 12px;
