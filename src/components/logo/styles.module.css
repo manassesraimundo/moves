@@ -2,7 +2,11 @@
   width: 120px;
 }
 
-.containerLogo>h1 {
+.containerLogo > a {
+  text-decoration: none;
+}
+
+.containerLogo>a>h1 {
   color: var(--primary-red-strong);
   text-align: center;
   font-style: oblique;
